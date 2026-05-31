@@ -1,0 +1,26 @@
+package com.example.projects.entities;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
+import lombok.*;
+
+import org.apache.catalina.User;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@ToString
+@Builder
+@Entity
+public class Alerts {
+    @Id
+    @GeneratedValue
+    private int id;
+    private String title;
+    @ManyToOne
+    private Events event;
+    @ManyToOne
+    private Users user;
+}
